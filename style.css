@@ -1,5 +1,3 @@
-/* style.css - Versão Final Ajustada (3ª Revisão) */
-
 /* --- Variáveis de Cor e Configurações Globais --- */
 :root {
     --cor-fundo: #fdf9f3;
@@ -147,11 +145,10 @@ header {
 }
 .sobre-imagem figure { margin: 0; }
 .sobre-imagem img {
-    /* AJUSTE PRINCIPAL AQUI */
-    width: 300px;      /* Largura fixa para criar um quadrado */
-    height: 300px;     /* Altura fixa para criar um quadrado */
-    border-radius: 50%; /* Transforma o quadrado em círculo */
-    object-fit: cover;  /* Garante que a imagem preencha o círculo sem distorcer */
+    width: 300px; 
+    height: 300px;   
+    border-radius: 50%;
+    object-fit: cover;
     border: 6px solid #fff; 
     box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     display: inline-block;
@@ -583,61 +580,52 @@ footer {
     }
     .whatsapp-float svg { width: 30px; height: 30px; }
 }
-/* ======================================================= */
-/* === NOVOS ESTILOS PARA O CABEÇALHO COM LOGO E TEXTO === */
-/* ======================================================= */
 
-/* Alinha o logo (imagem + texto) e remove o sublinhado do link */
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px; /* Espaço entre a imagem e o texto */
-    text-decoration: none; /* Garante que não haja sublinhado */
+    gap: 15px;
+    text-decoration: none;
 }
 
-/* Controla o tamanho do logo no cabeçalho */
 .logo img {
     height: 50px;
     width: auto;
     transition: all 0.3s ease;
 }
 
-/* Estiliza o texto ao lado do logo */
 .logo span {
-    font-size: 1.2rem; /* Tamanho da fonte do nome */
+    font-size: 1.2rem;
     font-weight: 600;
-    color: var(--cor-destaque); /* Cor do texto */
+    color: var(--cor-destaque);
 }
 
-/* Faz o cabeçalho ocupar todo o espaço e alinha os links à direita */
 .navbar {
     justify-content: space-between;
 }
 
 .nav-links {
-    margin-left: auto; /* Empurra os links para longe do logo */
-    padding-right: 2rem; /* Adiciona um espaço à direita dos links */
+    margin-left: auto; 
+    padding-right: 2rem; 
 }
 
-/* Ajustes para a versão mobile */
 @media (max-width: 900px) {
     .nav-links {
-        margin-left: 0; /* Reseta a margem no mobile */
-        padding-right: 0; /* Reseta o espaçamento no mobile */
+        margin-left: 0; 
+        padding-right: 0;
     }
 
     .logo img {
-        height: 40px; /* Diminui um pouco o logo em telas menores */
+        height: 40px; 
     }
 
     .logo span {
-        font-size: 1rem; /* Diminui a fonte do texto no mobile */
+        font-size: 1rem; 
     }
 }
 
-/* Em telas muito pequenas, podemos esconder o texto para não quebrar o layout */
 @media (max-width: 480px) {
     .logo span {
-        display: none; /* Esconde o texto "Laura Breitschaft..." */
+        display: none; 
     }
 }
