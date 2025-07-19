@@ -1,19 +1,31 @@
 // script.js
 
 document.addEventListener('DOMContentLoaded', function() {
-  const menuHamburger = document.querySelector('.menu-hamburger');
-  const navLinks = document.querySelector('.nav-links');
+    const menuHamburger = document.querySelector('.menu-hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    const body = document.body;
 
-  menuHamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
-
-  // Opcional: Fechar o menu ao clicar em um link (bom para one-page sites)
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('active');
+    menuHamburger.addEventListener('click', () => {
+        // Alterna a classe 'active' para o menu e para o ícone
+        navLinks.classList.toggle('active');
+        menuHamburger.classList.toggle('active');
+        
+        // Impede a rolagem da página quando o menu está ativo
+        if (navLinks.classList.contains('active')) {
+            body.classList.add('no-scroll');
+        } else {
+            body.classList.remove('no-scroll');
+        }
     });
-  });
+
+    // Opcional: Fechar o menu ao clicar em um link (bom para one-page sites)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            menuHamburger.classList.remove('active');
+            body.classList.remove('no-scroll');
+        });
+    });
 });
 
 // =======================================================
