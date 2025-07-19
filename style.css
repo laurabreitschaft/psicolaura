@@ -14,7 +14,6 @@
 /* --- Estilos Globais --- */
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
 }
 body {
     margin: 0;
@@ -22,7 +21,6 @@ body {
     background-color: var(--cor-fundo);
     color: var(--cor-texto-principal);
     width: 100%;
-    overflow-x: hidden;
 }
 main { display: block; }
 * { box-sizing: border-box; }
@@ -584,4 +582,62 @@ footer {
         right: 20px;
     }
     .whatsapp-float svg { width: 30px; height: 30px; }
+}
+/* ======================================================= */
+/* === NOVOS ESTILOS PARA O CABEÇALHO COM LOGO E TEXTO === */
+/* ======================================================= */
+
+/* Alinha o logo (imagem + texto) e remove o sublinhado do link */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaço entre a imagem e o texto */
+    text-decoration: none; /* Garante que não haja sublinhado */
+}
+
+/* Controla o tamanho do logo no cabeçalho */
+.logo img {
+    height: 50px;
+    width: auto;
+    transition: all 0.3s ease;
+}
+
+/* Estiliza o texto ao lado do logo */
+.logo span {
+    font-size: 1.2rem; /* Tamanho da fonte do nome */
+    font-weight: 600;
+    color: var(--cor-destaque); /* Cor do texto */
+}
+
+/* Faz o cabeçalho ocupar todo o espaço e alinha os links à direita */
+.navbar {
+    justify-content: space-between;
+}
+
+.nav-links {
+    margin-left: auto; /* Empurra os links para longe do logo */
+    padding-right: 2rem; /* Adiciona um espaço à direita dos links */
+}
+
+/* Ajustes para a versão mobile */
+@media (max-width: 900px) {
+    .nav-links {
+        margin-left: 0; /* Reseta a margem no mobile */
+        padding-right: 0; /* Reseta o espaçamento no mobile */
+    }
+
+    .logo img {
+        height: 40px; /* Diminui um pouco o logo em telas menores */
+    }
+
+    .logo span {
+        font-size: 1rem; /* Diminui a fonte do texto no mobile */
+    }
+}
+
+/* Em telas muito pequenas, podemos esconder o texto para não quebrar o layout */
+@media (max-width: 480px) {
+    .logo span {
+        display: none; /* Esconde o texto "Laura Breitschaft..." */
+    }
 }
