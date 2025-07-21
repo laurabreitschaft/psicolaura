@@ -113,26 +113,35 @@ header {
 
 .nav-links {
     list-style: none;
-    padding: 0;
+    padding: 1.5rem 0;
     margin: 0;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    height: 100vh;
-    width: 70vw;
-    max-width: 300px;
-    background-color: var(--cor-fundo-claro);
-    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 100%; /* Posiciona o menu exatamente abaixo do cabeçalho */
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.07);
+    border-top: 1px solid #e9e0d7;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 2.5rem;
-    transition: right 0.4s ease-in-out;
+    gap: 1.5rem;
+
+    /* Controle de visibilidade e animação */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-15px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0.3s;
+    z-index: 1000;
 }
 
+/* --- Estilo do Menu Ativo (Quando o Hambúrguer é Clicado) --- */
 .nav-links.active {
-    right: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s 0s;
 }
 
 .nav-links a {
@@ -309,6 +318,12 @@ header {
     align-items: center;
     text-align: center;
     gap: 2.5rem;
+}
+
+.sobre-imagem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .sobre-imagem figure {
@@ -685,13 +700,9 @@ footer {
     color: #3D3830;
     text-shadow: 0 1px 5px rgba(56, 44, 44, 0.6);
 }
-    .ajuda-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .servicos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .ajuda-grid, .servicos-grid, .jornada-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
     
     .sobre-container {
         flex-direction: row;
@@ -724,10 +735,6 @@ footer {
         flex-grow: 1;
     }
 
-    .jornada-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
     .footer-container {
         flex-direction: row;
         justify-content: space-between;
@@ -742,108 +749,35 @@ footer {
     }
 }
 
-/* --- DESKTOPS --- */
-/* --- DESKTOPS --- */
-@media (min-width: 768px) {
-    .section-headline, .section-header h2, .contato-section h2, .sobre-texto h2 {
-        font-size: 2.2rem;
-    }
-
-    .hero {
-        justify-content: flex-start;
-        text-align: left;
-        min-height: 90vh;
-        background-position: 70% 50%;
-    }
-
-    .hero-content {
-        max-width: 600px;
-        padding: 0 5%;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-content p {
-        font-size: 1.2rem;
-    }
-
-    .ajuda-grid {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .servicos-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-    
-    .sobre-container {
-        flex-direction: row;
-        text-align: left;
-        gap: 3rem;
-    }
-
-    .sobre-imagem {
-        flex: 1;
-        max-width: 450px;
-    }
-
-    .sobre-imagem img {
-        width: 300px;
-        height: 300px;
-    }
-
-    .sobre-texto {
-        flex: 1.5;
-        text-align: left;
-    }
-
-    .instagram-box {
-        flex-direction: row;
-        text-align: left;
-        gap: 1.5rem;
-    }
-
-    .instagram-content {
-        flex-grow: 1;
-    }
-
-    .jornada-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .footer-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        text-align: left;
-        gap: 2rem;
-    }
-
-    .footer-logo {
-        order: 0;
-        text-align: right;
-    }
-}
-
-/* --- DESKTOPS (Breakpoint ajustado para 992px) --- */
 @media (min-width: 992px) {
     .menu-hamburger {
         display: none;
     }
 
     .nav-links {
+        /* Reseta para o layout de desktop */
         position: static;
-        flex-direction: row;
-        height: auto;
+        top: auto;
+        left: auto;
         width: auto;
+        height: auto;
+        flex-direction: row;
         background-color: transparent;
         box-shadow: none;
-        gap: 2.5rem; /* Podemos voltar ao gap original, pois haverá mais espaço */
+        border-top: none;
+        gap: 2.5rem;
         margin-left: auto;
+        padding: 0;
         padding-right: 4rem;
+
+        /* Garante a visibilidade permanente no desktop */
+        visibility: visible;
+        opacity: 1;
+        transform: none;
+        z-index: auto;
     }
-    
+
+    /* ESTAS REGRAS DEVEM ESTAR AQUI DENTRO */
     .nav-links a {
         font-size: 1rem;
         padding-bottom: 6px;
@@ -872,4 +806,70 @@ footer {
     .logo span {
         font-size: 1.2rem;
     }
+}
+
+
+/* --- Efeito de Brilho nos Cards --- */
+.ajuda-card, .servico-card, .jornada-card {
+    position: relative; /* Necessário para o pseudo-elemento */
+    overflow: hidden;   /* Esconde o brilho fora do card */
+}
+
+.ajuda-card::before, .servico-card::before, .jornada-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%; /* Começa fora da tela à esquerda */
+    width: 75%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg); /* Inclina o brilho */
+    transition: left 0.75s;
+}
+
+.ajuda-card:hover::before, .servico-card:hover::before, .jornada-card:hover::before {
+    left: 150%; /* Move o brilho para fora da tela à direita */
+}
+
+/* --- Botão Voltar ao Topo --- */
+/* --- Botão Voltar ao Topo --- */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* ALTERADO DE 'right' PARA 'left' */
+    
+    width: 45px;
+    height: 45px;
+    background-color: var(--cor-destaque);
+    color: white;
+    border-radius: 50%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    text-decoration: none;
+    z-index: 998;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
+}
+
+#back-to-top-btn:hover {
+    background-color: var(--cor-destaque-hover);
+}
+
+/* Classe que o JavaScript irá adicionar para mostrar o botão */
+#back-to-top-btn.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
