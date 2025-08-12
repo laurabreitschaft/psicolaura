@@ -1,15 +1,11 @@
-// script.js - Versão Final, Limpa e Organizada
-
 document.addEventListener('DOMContentLoaded', function() {
 
-    // 1. INICIALIZAÇÃO DE ANIMAÇÕES
     AOS.init({
         duration: 800,
         once: true,
         offset: 100,
     });
 
-    // 2. CÓDIGO DO MENU HAMBÚRGUER
     const menuHamburger = document.querySelector('.menu-hamburger');
     const navLinks = document.querySelector('.nav-links');
     const body = document.body;
@@ -32,7 +28,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // 3. CÓDIGO DO ACORDEÃO (FAQ)
     const faqItems = document.querySelectorAll('.faq-item');
 
     faqItems.forEach(item => {
@@ -42,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 const answer = item.querySelector('.faq-answer');
                 const currentlyActive = item.classList.contains('active');
 
-                // Fecha todos os outros itens
                 faqItems.forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
@@ -50,7 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
 
-                // Abre ou fecha o item clicado
                 if (currentlyActive) {
                     item.classList.remove('active');
                     answer.style.maxHeight = '0px';
@@ -62,7 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 4. CÓDIGO DO BOTÃO VOLTAR AO TOPO
     const backToTopBtn = document.getElementById('back-to-top-btn');
 
     if (backToTopBtn) {
@@ -83,4 +75,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    const sobreSection = document.querySelector('.sobre-section');
+
+    if (sobreSection) {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sobreSection.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(sobreSection);
+    }
 });
