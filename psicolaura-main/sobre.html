@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <meta name="description" content="Conheça a psicóloga Laura Breitschaft — CRP 06/203681 em Jundiaí. Abordagem fenomenológico-existencial, formação e filosofia de trabalho. Terapia online e presencial.">
+    <meta property="og:title" content="Sobre — Laura Breitschaft | Psicóloga em Jundiaí">
+    <meta property="og:description" content="Conheça a trajetória da psicóloga Laura Breitschaft em Jundiaí. Abordagem fenomenológico-existencial.">
+    <meta property="og:image" content="img/sobre.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>Sobre — Laura Breitschaft | Psicóloga em Jundiaí</title>
+    <style>
+        .sobre-page {
+            padding: 5rem 1.5rem;
+        }
+        .sobre-page-container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+        .sobre-page-hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .sobre-page-hero img {
+            width: 240px;
+            height: 240px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 8px 32px rgba(107, 83, 58, 0.12);
+        }
+        .sobre-page-hero h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.2rem;
+            color: var(--cor-texto-principal);
+            text-align: center;
+            margin: 0;
+        }
+        .sobre-page-hero .crp {
+            margin-top: 0.3rem;
+            padding: 0.4rem 1rem;
+            background: linear-gradient(135deg, rgba(176, 137, 104, 0.12), rgba(176, 137, 104, 0.05));
+            border-radius: 20px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--cor-destaque);
+            letter-spacing: 0.5px;
+        }
+        .sobre-page-citacao {
+            font-family: var(--fonte-titulo);
+            font-style: italic;
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--cor-destaque);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            background: rgba(176, 137, 104, 0.05);
+            border-radius: 12px;
+            line-height: 1.7;
+        }
+        .sobre-page-citacao cite {
+            display: block;
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            font-style: normal;
+            color: var(--cor-texto-secundario);
+        }
+        .sobre-page-section {
+            margin-bottom: 3rem;
+        }
+        .sobre-page-section h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.6rem;
+            color: var(--cor-destaque);
+            margin-bottom: 1rem;
+        }
+        .sobre-page-section p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 1rem;
+        }
+        .sobre-timeline {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-left: 3px solid var(--cor-destaque-suave);
+            padding-left: 1.5rem;
+        }
+        .sobre-timeline li {
+            position: relative;
+            padding-left: 1rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            color: var(--cor-texto-secundario);
+        }
+        .sobre-timeline li::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0.4rem;
+            width: 12px;
+            height: 12px;
+            background: var(--cor-destaque);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 3px rgba(176, 137, 104, 0.2);
+        }
+        .sobre-timeline li strong {
+            display: block;
+            color: var(--cor-texto-principal);
+            margin-bottom: 0.3rem;
+            font-family: var(--fonte-titulo);
+        }
+        .sobre-pilares {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .sobre-pilar {
+            background: var(--cor-card);
+            padding: 1.8rem;
+            border-radius: 16px;
+            box-shadow: var(--sombra-card);
+            border: 1px solid rgba(233, 223, 212, 0.5);
+            text-align: center;
+        }
+        .sobre-pilar h3 {
+            font-family: var(--fonte-titulo);
+            color: var(--cor-destaque);
+            margin-bottom: 0.5rem;
+        }
+        .sobre-pilar p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+        }
+        @media (min-width: 768px) {
+            .sobre-page-hero {
+                flex-direction: row;
+                text-align: left;
+                gap: 3rem;
+            }
+            .sobre-page-hero h1 {
+                text-align: left;
+            }
+            .sobre-pilares {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#sobre-conteudo">Pular para o conteúdo</a>
+    <header id="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">
+                <img src="img/logo-rodape.png" alt="Logo Laura Breitschaft Psicóloga">
+                <span>Laura Breitschaft</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="index.html#atendimento">Atendimento</a></li>
+                <li><a href="index.html#abordagem">Abordagem</a></li>
+                <li><a href="blog/index.html">Blog</a></li>
+                <li><a href="index.html#contato">Contato</a></li>
+            </ul>
+            <button class="menu-hamburger" aria-label="Abrir menu de navegação">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="sobre-conteudo">
+        <section class="sobre-page">
+            <div class="sobre-page-container">
+                <div class="sobre-page-hero" data-aos="fade-up">
+                    <img src="img/sobre.png" alt="Foto de Laura Breitschaft, psicóloga">
+                    <div>
+                        <h1>Laura Feodrippe de Sousa Breitschaft</h1>
+                        <span class="crp">CRP 06/203681</span>
+                    </div>
+                </div>
+
+                <blockquote class="sobre-page-citacao" data-aos="fade-up">
+                    "A vida só pode ser compreendida olhando-se para trás; mas só pode ser vivida olhando-se para a frente."
+                    <cite>— Søren Kierkegaard</cite>
+                </blockquote>
+
+                <div class="sobre-page-section" data-aos="fade-up">
+                    <h2>Minha Trajetória</h2>
+                    <p>Sou graduada em Psicologia pela <strong>Universidade Padre Anchieta</strong> em Jundiaí. Desde cedo, me encantei pela complexidade do ser humano — não pelas respostas prontas, mas pelas perguntas que cada pessoa carrega dentro de si.</p>
+                    <p>Ao longo da graduação, me aproximei da <strong>Fenomenologia Existencial</strong>, uma abordagem que ressoou profundamente com minha visão de mundo. Acredito que cada pessoa é única e que o caminho terapêutico não é sobre "consertar" algo quebrado, mas sobre <em>descobrir o que faz sentido</em> na sua história.</p>
+                    <p>Minha formação incluiu uma <strong>pós-graduação em Fenomenologia pelo IFEN RJ</strong> e um curso de <strong>Psicologia Clínica Existencial com base em Kierkegaard</strong> com a professora Maitê Sartori. Essas experiências moldaram minha prática clínica e minha sensibilidade para acolher cada paciente em sua singularidade.</p>
+                </div>
+
+                <div class="sobre-page-section" data-aos="fade-up">
+                    <h2>Linha do Tempo</h2>
+                    <ul class="sobre-timeline">
+                        <li><strong>Graduação em Psicologia</strong>Universidade Padre Anchieta, Jundiaí/SP</li>
+                        <li><strong>Pós-graduação em Fenomenologia</strong>IFEN — Instituto de Fenomenologia, Rio de Janeiro/RJ</li>
+                        <li><strong>Psicologia Clínica Existencial com base em Kierkegaard</strong>Curso com Maitê Sartori</li>
+                        <li><strong>Voluntariado na ONG Sonhar Acordado</strong>Experiência que reforçou meu compromisso com o bem-estar do outro e com a potência transformadora da escuta.</li>
+                        <li><strong>Atendimento Clínico</strong>Clínica Morada do Ser — atendimento presencial e online para crianças, adolescentes e adultos.</li>
+                    </ul>
+                </div>
+
+                <div class="sobre-page-section" data-aos="fade-up">
+                    <h2>Minha Abordagem em 3 Pilares</h2>
+                    <div class="sobre-pilares">
+                        <div class="sobre-pilar">
+                            <h3>Escuta sem Julgamento</h3>
+                            <p>Ofereço um espaço onde você pode falar livremente sobre o que sente, sem medo de ser rotulado(a). Aqui, não existem certos ou errados — existe a sua experiência.</p>
+                        </div>
+                        <div class="sobre-pilar">
+                            <h3>Respeito ao seu Ritmo</h3>
+                            <p>O processo terapêutico é uma jornada, não uma corrida. Caminhamos juntos no tempo que o seu coração e a sua mente precisarem.</p>
+                        </div>
+                        <div class="sobre-pilar">
+                            <h3>Compromisso com o Sentido</h3>
+                            <p>Não busco encaixar você em diagnósticos. Busco, junto com você, compreender o significado da sua vivência e abrir caminhos para uma vida mais autêntica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sobre-page-section" data-aos="fade-up">
+                    <h2>Além do Consultório</h2>
+                    <p>Além da psicologia, sou apaixonada por literatura, música e por tudo que nos conecta ao que é genuinamente humano. Acredito que a arte e a sensibilidade são grandes aliadas no processo de autoconhecimento.</p>
+                    <p>A experiência como voluntária na <strong>ONG Sonhar Acordado</strong> foi um marco na minha vida. Estar perto de crianças em situação de vulnerabilidade me ensinou que a escuta genuína é um dos maiores presentes que podemos oferecer a alguém.</p>
+                </div>
+
+                <div class="cta-center" data-aos="fade-up">
+                    <a href="https://wa.me/5511948906433" target="_blank" class="btn-whatsapp">Agende sua sessão</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contato">
+                <p class="footer-nome">Laura Feodrippe de Sousa Breitschaft</p>
+                <p class="footer-info">CRP 06/203681</p>
+                <p class="footer-info">E-mail: <a href="mailto:laurabreitschaft@gmail.com">laurabreitschaft@gmail.com</a></p>
+                <a href="https://wa.me/5511948906433" target="_blank" class="footer-whatsapp" aria-label="Fale conosco pelo WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.068-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    <span>Fale comigo</span>
+                </a>
+                <a href="https://www.instagram.com/psico.laurabreitschaft/" target="_blank" class="footer-instagram" aria-label="Siga no Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="img/logo-rodape.png" alt="Logo Laura Breitschaft Psicóloga" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 Laura Breitschaft – Psicóloga. Todos os direitos reservados. | <a href="politica-privacidade.html" class="privacy-link">Política de Privacidade</a></p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511948906433" class="whatsapp-float" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.068-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+    </a>
+
+    <a href="#sobre-conteudo" id="back-to-top-btn" aria-label="Voltar ao topo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

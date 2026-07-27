@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Blog da psicóloga Laura Breitschaft em Jundiaí — artigos sobre psicologia, autoconhecimento, ansiedade, fenomenologia existencial e bem-estar.">
+    <meta property="og:title" content="Blog — Laura Breitschaft | Psicóloga em Jundiaí">
+    <meta property="og:description" content="Artigos sobre psicologia, autoconhecimento, ansiedade e bem-estar. Escritos pela psicóloga Laura Breitschaft em Jundiaí.">
+    <meta property="og:image" content="../img/sobre.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <title>Blog — Laura Breitschaft | Psicóloga em Jundiaí</title>
+    <style>
+        .blog-page {
+            padding: 5rem 1.5rem;
+        }
+        .blog-container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .blog-container h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.5rem;
+            color: var(--cor-destaque);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .blog-container .blog-subtitle {
+            text-align: center;
+            color: var(--cor-texto-secundario);
+            font-size: 1.05rem;
+            margin-bottom: 3rem;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        .blog-card {
+            background: var(--cor-card);
+            border-radius: 16px;
+            box-shadow: var(--sombra-card);
+            border: 1px solid rgba(233, 223, 212, 0.5);
+            overflow: hidden;
+            transition: var(--transicao-suave);
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--sombra-card-hover);
+        }
+        .blog-card-body {
+            padding: 2rem;
+        }
+        .blog-card-categoria {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--cor-destaque);
+            margin-bottom: 0.6rem;
+        }
+        .blog-card-body h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.35rem;
+            color: var(--cor-texto-principal);
+            margin: 0 0 0.6rem;
+            line-height: 1.4;
+        }
+        .blog-card-body p {
+            font-size: 0.95rem;
+            color: var(--cor-texto-secundario);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .blog-card-meta {
+            font-size: 0.82rem;
+            color: var(--cor-texto-secundario);
+            opacity: 0.7;
+        }
+        @media (min-width: 768px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <a class="skip-link" href="#blog-conteudo">Pular para o conteúdo</a>
+    <header id="main-header">
+        <nav class="navbar">
+            <a href="../index.html" class="logo">
+                <img src="../img/logo-rodape.png" alt="Logo Laura Breitschaft Psicóloga">
+                <span>Laura Breitschaft</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="../sobre.html">Sobre</a></li>
+                <li><a href="../index.html#atendimento">Atendimento</a></li>
+                <li><a href="../index.html#abordagem">Abordagem</a></li>
+                <li><a href="index.html">Blog</a></li>
+                <li><a href="../index.html#contato">Contato</a></li>
+            </ul>
+            <button class="menu-hamburger" aria-label="Abrir menu de navegação">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main id="blog-conteudo">
+        <section class="blog-page">
+            <div class="blog-container">
+                <h1>Blog</h1>
+                <p class="blog-subtitle">Artigos sobre psicologia, autoconhecimento e bem-estar. Escritos com cuidado, baseados na abordagem fenomenológico-existencial.</p>
+
+                <div class="blog-grid">
+                    <a href="primeira-sessao-terapia.html" class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-card-categoria">Terapia</span>
+                            <h2>O que esperar da primeira sessão de terapia</h2>
+                            <p>Sua primeira sessão pode gerar dúvidas e inseguranças. Saiba o que esperar, o que levar e como se preparar para esse momento importante.</p>
+                            <span class="blog-card-meta">Por Laura Breitschaft — Jul 2026</span>
+                        </div>
+                    </a>
+                    <a href="artigo-exemplo.html" class="blog-card">
+                        <div class="blog-card-body">
+                            <span class="blog-card-categoria">Psicoterapia</span>
+                            <h2>Como escolher um psicólogo: um guia para quem está pensando em começar a terapia</h2>
+                            <p>Dar o primeiro passo pode ser desafiador. Neste artigo, compartilho orientações para ajudar você a encontrar um profissional com quem se sinta seguro(a) e acolhido(a).</p>
+                            <span class="blog-card-meta">Por Laura Breitschaft</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-contato">
+                <p class="footer-nome">Laura Feodrippe de Sousa Breitschaft</p>
+                <p class="footer-info">CRP 06/203681</p>
+                <p class="footer-info">E-mail: <a href="mailto:laurabreitschaft@gmail.com">laurabreitschaft@gmail.com</a></p>
+                <a href="https://wa.me/5511948906433" target="_blank" class="footer-whatsapp" aria-label="Fale conosco pelo WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"><path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.068-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/></svg>
+                    <span>Fale comigo</span>
+                </a>
+                <a href="https://www.instagram.com/psico.laurabreitschaft/" target="_blank" class="footer-instagram" aria-label="Siga no Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <span>Instagram</span>
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="../img/logo-rodape.png" alt="Logo Laura Breitschaft Psicóloga" loading="lazy">
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>&copy; 2026 Laura Breitschaft – Psicóloga. Todos os direitos reservados. | <a href="../politica-privacidade.html" class="privacy-link">Política de Privacidade</a></p>
+        </div>
+    </footer>
+</body>
+</html>
