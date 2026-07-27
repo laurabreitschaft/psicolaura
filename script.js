@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ======================== Navbar Shrink on Scroll ========================
     const header = document.getElementById('main-header');
+    const scrollProgress = document.querySelector('.scroll-progress');
 
     if (header) {
         let lastScroll = 0;
@@ -21,6 +22,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 header.classList.remove('scrolled');
             }
             lastScroll = currentScroll;
+        }, { passive: true });
+    }
+
+    // ======================== Scroll Progress Bar ========================
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrolled = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+            scrollProgress.style.width = scrolled + '%';
         }, { passive: true });
     }
 
@@ -74,6 +84,85 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+
+    // ======================== Quiz Interativo ========================
+    const quizContainer = document.querySelector('.quiz-container');
+
+    if (quizContainer) {
+        const questions = quizContainer.querySelectorAll('.quiz-question');
+        const progressBar = quizContainer.querySelector('.quiz-progress-bar');
+        const resultDiv = quizContainer.querySelector('.quiz-result');
+        const resultIcon = quizContainer.querySelector('.quiz-result-icon');
+        const resultTitle = quizContainer.querySelector('.quiz-result-title');
+        const resultText = quizContainer.querySelector('.quiz-result-text');
+        const restartBtn = quizContainer.querySelector('.quiz-restart');
+        let currentQuestion = 0;
+        let totalScore = 0;
+
+        function updateProgress() {
+            const pct = ((currentQuestion + 1) / questions.length) * 100;
+            progressBar.style.width = pct + '%';
+        }
+
+        function showResult() {
+            const quizQuestions = quizContainer.querySelector('.quiz-questions');
+            const quizProgress = quizContainer.querySelector('.quiz-progress');
+            quizQuestions.style.display = 'none';
+            quizProgress.style.display = 'none';
+            resultDiv.style.display = 'block';
+
+            if (totalScore <= 3) {
+                resultIcon.textContent = '🌿';
+                resultTitle.textContent = 'Você está bem, mas pode cuidar ainda mais';
+                resultText.textContent = 'Suas respostas indicam que você está lidando bem com os desafios do dia a dia. Mas se perceber que algo incomoda, um espaço de escuta pode ajudar você a se conhecer melhor e prevenir futuras crises.';
+            } else if (totalScore <= 6) {
+                resultIcon.textContent = '🌱';
+                resultTitle.textContent = 'Vale a pena conversar com um profissional';
+                resultText.textContent = 'Algumas das suas respostas mostram que você pode estar carregando coisas que um processo terapêutico poderia ajudar a organizar. Não é preciso estar em crise para buscar ajuda — às vezes, conversar é o primeiro passo.';
+            } else {
+                resultIcon.textContent = '💛';
+                resultTitle.textContent = 'A terapia pode fazer diferença na sua vida';
+                resultText.textContent = 'Suas respostas sugerem que você está passando por um momento em que o apoio profissional pode ser muito útil. Um espaço seguro e sem julgamentos pode te ajudar a entender melhor o que está sentindo e encontrar novos caminhos.';
+            }
+
+            resultDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function resetQuiz() {
+            currentQuestion = 0;
+            totalScore = 0;
+            questions.forEach(q => q.classList.remove('active'));
+            questions[0].classList.add('active');
+            resultDiv.style.display = 'none';
+            quizContainer.querySelector('.quiz-questions').style.display = 'block';
+            quizContainer.querySelector('.quiz-progress').style.display = 'block';
+            updateProgress();
+        }
+
+        quizContainer.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', () => {
+                const parent = option.closest('.quiz-question');
+                parent.querySelectorAll('.quiz-option').forEach(o => o.classList.remove('selected'));
+                option.classList.add('selected');
+                totalScore += parseInt(option.dataset.value);
+
+                setTimeout(() => {
+                    parent.classList.remove('active');
+                    currentQuestion++;
+                    if (currentQuestion < questions.length) {
+                        questions[currentQuestion].classList.add('active');
+                        updateProgress();
+                    } else {
+                        showResult();
+                    }
+                }, 350);
+            });
+        });
+
+        if (restartBtn) {
+            restartBtn.addEventListener('click', resetQuiz);
+        }
+    }
 
     // ======================== Back to Top ========================
     const backToTopBtn = document.getElementById('back-to-top-btn');

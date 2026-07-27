@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Sinais de que é Hora de Buscar Ajuda Profissional | Laura Breitschaft</title>
+    <meta name="description" content="Guia gratuito: 5 sinais de que é hora de buscar ajuda psicológica. Baixe e descubra se a terapia pode ajudar você.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <style>
+        .guia-page {
+            min-height: 100vh;
+            background: var(--cor-fundo-claro);
+        }
+
+        .guia-header {
+            background: linear-gradient(135deg, var(--cor-fundo) 0%, var(--cor-fundo-intermediario) 100%);
+            padding: 3rem 1.5rem 2.5rem;
+            text-align: center;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        .guia-badge {
+            display: inline-block;
+            background: var(--gradiente-cta);
+            color: white;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .guia-header h1 {
+            font-family: var(--fonte-titulo);
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .guia-header p {
+            font-size: 1.05rem;
+            color: var(--cor-texto-secundario);
+            max-width: 550px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .guia-content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+        }
+
+        .guia-sinal {
+            background: var(--cor-card);
+            border-radius: 16px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--sombra-sutil);
+            border: 1px solid rgba(233, 223, 212, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guia-sinal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradiente-cta);
+        }
+
+        .guia-sinal-numero {
+            font-family: var(--fonte-titulo);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--cor-destaque);
+            opacity: 0.3;
+            margin-bottom: 0.3rem;
+        }
+
+        .guia-sinal h3 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--cor-texto-principal);
+            margin-bottom: 0.8rem;
+        }
+
+        .guia-sinal p {
+            font-size: 0.98rem;
+            line-height: 1.8;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 0;
+        }
+
+        .guia-sinal em {
+            color: var(--cor-destaque-profundo);
+            font-style: italic;
+        }
+
+        .guia-cta-section {
+            text-align: center;
+            background: var(--cor-fundo-intermediario);
+            padding: 3rem 1.5rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+
+        .guia-cta-section h2 {
+            font-family: var(--fonte-titulo);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cor-texto-principal);
+            margin-bottom: 0.8rem;
+        }
+
+        .guia-cta-section p {
+            font-size: 0.98rem;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 1.5rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .guia-footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            font-size: 0.85rem;
+            color: var(--cor-texto-secundario);
+            opacity: 0.7;
+        }
+
+        .guia-footer a {
+            color: var(--cor-destaque);
+            text-decoration: none;
+        }
+
+        .print-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: transparent;
+            border: 2px solid var(--cor-destaque);
+            color: var(--cor-destaque-profundo);
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-family: var(--fonte-corpo);
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transicao-suave);
+            margin-bottom: 1.5rem;
+        }
+
+        .print-btn:hover {
+            background: var(--cor-destaque);
+            color: white;
+        }
+
+        @media print {
+            .guia-header, .guia-cta-section, .guia-footer, .print-btn { display: none; }
+            .guia-content { padding: 0; max-width: 100%; }
+            .guia-sinal { box-shadow: none; border: 1px solid #ddd; break-inside: avoid; }
+            body { background: white; }
+            body::before { display: none; }
+        }
+
+        @media (max-width: 600px) {
+            .guia-header h1 { font-size: 1.7rem; }
+            .guia-sinal { padding: 1.5rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="guia-page">
+        <div class="guia-header">
+            <span class="guia-badge">Guia Gratuito</span>
+            <h1>5 Sinais de que é Hora de Buscar Ajuda Profissional</h1>
+            <p>Um guia rápido para te ajudar a reconhecer quando a conversa com um psicólogo pode fazer diferença na sua vida.</p>
+        </div>
+
+        <div class="guia-content">
+            <button class="print-btn" onclick="window.print()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Salvar como PDF
+            </button>
+
+            <div class="guia-sinal">
+                <div class="guia-sinal-numero">01</div>
+                <h3>Você está sempre preocupado(a) ou tenso(a) sem motivo aparente</h3>
+                <p>A ansiedade nem sempre vem com uma causa clara. Quando a tensão se torna uma constante — mesmo quando tudo "parece" estar bem — é sinal de que algo precisa de atenção. <em>A terapia te ajuda a entender de onde vem essa inquietação e como lidar com ela.</em></p>
+            </div>
+
+            <div class="guia-sinal">
+                <div class="guia-sinal-numero">02</div>
+                <h3>Suas relações estão gerando mais desgaste do que alegria</h3>
+                <p>Se você tem evitado pessoas, brigado com frequência ou se sentido sozinho(a) mesmo cercado(a) de gente, pode ser hora de olhar para os padrões que se repetem. <em>A terapia te dá ferramentas para se relacionar de forma mais saudável.</em></p>
+            </div>
+
+            <div class="guia-sinal">
+                <div class="guia-sinal-numero">03</div>
+                <h3>Você sente que sua vida perdeu sentido ou direção</h3>
+                <p>Aquela sensação de "é tudo isso?" pode ser um convite para se reconectar consigo. Não é frescura, é um chamado para o autoconhecimento. <em>A abordagem fenomenológica-existencial é especialmente indicada para quem busca sentido na própria existência.</em></p>
+            </div>
+
+            <div class="guia-sinal">
+                <div class="guia-sinal-numero">04</div>
+                <h3>Seu corpo está reagindo: insomnia, cansaço, dores sem explicação</h3>
+                <p>O corpo fala o que a mente cala. Insônio, fadiga crônica, dores de cabeça ou estômago sem causa médica podem ser manifestações emocionais. <em>Um psicólogo pode te ajudar a interpretar esses sinais.</em></p>
+            </div>
+
+            <div class="guia-sinal">
+                <div class="guia-sinal-numero">05</div>
+                <h3>Você está se funcionando no automático, sem sentir prazer</h3>
+                <p>Acordar, trabalhar, dormir, repetir. Quando a vida vira uma rotina vazia e nada mais desperta interesse, é um sinal importante. <em>A terapia não te dá respostas prontas — te ajuda a encontrar as suas.</em></p>
+            </div>
+
+            <div class="guia-cta-section">
+                <h2>Reconheceu algum desses sinais?</h2>
+                <p>Não é preciso estar em crise para buscar ajuda. Conversar com um profissional é um ato de coragem e autocuidado. Se você sentiu que pelo menos um desses pontos faz sentido, que tal agendar uma conversa?</p>
+                <a href="https://wa.me/5511948906433?text=Ol%C3%A1%2C%20li%20o%20guia%20no%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20sess%C3%A3o." target="_blank" class="btn-whatsapp">Agende sua sessão</a>
+            </div>
+        </div>
+
+        <div class="guia-footer">
+            <p>Guia elaborado pela <a href="index.html">Laura Breitschaft — Psicóloga em Jundiaí</a> | CRP 06/203681</p>
+        </div>
+    </div>
+</body>
+
+</html>
